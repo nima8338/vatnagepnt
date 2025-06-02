@@ -1,0 +1,240 @@
+:root {
+    --secondary-color: #ffffff;
+    
+    --font-color: #333;
+    --border-color: #ccc;
+    --covered-color: #1c335c;
+    --uncovered-color: #e6e6e6;
+--accent-color: #f78e31;
+--primary-color: #1c335c;
+
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+    text-align: center;
+}
+
+header h1 {
+    color: var(--primary-color);
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.controls fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.controls label {
+    
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+#map-container {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.state {
+    stroke: #fff;
+    stroke-width: 1px;
+    transition: fill 0.3s ease;
+    cursor: pointer;
+}
+
+.state.has-data {
+    fill: var(--covered-color);
+}
+
+.state.no-data {
+    fill: var(--uncovered-color);
+}
+
+.state:hover {
+    fill: var(--accent-color);
+}
+
+.state.selected {
+    fill: var(--accent-color); /* Same as hover color */
+}
+
+
+
+#modal-rep-info .rep-card {
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+#modal-rep-info .rep-card:first-child {
+    border-top: none;
+}
+
+#modal-rep-info p {
+    margin: 5px 0;
+}
+.rep-info-box {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.rep-info-box h2 {
+    color: var(--primary-color);
+}
+
+.rep-card {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding: 5px 0;
+    margin-top: 10px;
+}
+
+.rep-card:first-child {
+    border-top: none;
+}
+
+.rep-card img.rep-photo {
+    flex-shrink: 0;
+    width: 180px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.rep-card .rep-info {
+    flex-grow: 1;
+}
+
+.rep-card .rep-info p {
+    margin: 5px 0;
+}
+
+.rep-card .rep-info .rep-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.rep-card .rep-info .rep-phone {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.rep-card .rep-info .rep-contact {
+    font-size: 1em;
+    color: var(--primary-color);
+}
+
+.controls {
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.controls legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--primary-color);
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align */
+}
+
+.radio-button input {
+    display: none;
+}
+
+.radio-button {
+    background-color: var(--accent-color);
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 700;
+    
+    color: var(--primary-color);
+    border-radius: 5px;
+    padding: 17px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.radio-button:hover,
+.radio-button.checked {
+    background-color: #789abf;
+    color: white;
+}
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: stretch; /* Make buttons full width */
+    }
+    
+    .radio-button {
+        margin-right: 0; /* Remove right margin */
+        text-align: center;
+    }
+
+    .rep-card {
+        flex-direction: column; /* Stack image and info vertically */
+        text-align: center; /* Center text below image */
+    }
+
+    .rep-card img.rep-photo {
+        width: 100%; /* Make photo responsive */
+        max-width: 250px; /* Optional: constrain max photo width */
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 15px; /* Add space between image and text */
+    }
+
+    .rep-info-box {
+        padding: 15px;
+    }
+}
+
+/* For small mobile phones */
+@media (max-width: 480px) {
+    .rep-card .rep-info .rep-name {
+        font-size: 1.3em;
+    }
+
+    .rep-card .rep-info .rep-contact {
+        font-size: 0.9em;
+    }
+
+    .rep-info-box h2 {
+        font-size: 1.2em;
+    }
+}
